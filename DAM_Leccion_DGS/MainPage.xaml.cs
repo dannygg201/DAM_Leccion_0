@@ -26,11 +26,19 @@ namespace DAM_Leccion_DGS
 
         public void Ejecutar()
         {
-            PersonaModel personaModel = new PersonaModel();
+            PersonaModel personaModel = new PersonaModel()
+            {
+                Nombre = "Hola muñeco",
+            };
 
-            personaModel.Nombre = "Hola muñeco";
+            BindingContext = personaModel.Nombre;
 
-            txtNombre.Text = personaModel.Nombre;
+            //Binding personaBinding = new Binding();
+
+            //personaBinding.Source = personaModel;//Origen
+            //personaBinding.Path = "Nombre";//Ruta
+            //txtNombre.SetBinding(Entry.TextProperty,personaBinding);//Destino final
+            //txtNombre.Text = personaModel.Nombre;
         }
         private void btnAceptar_Clicked(object sender, EventArgs e)
         {
